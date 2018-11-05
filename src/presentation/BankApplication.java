@@ -13,7 +13,7 @@ public class BankApplication {
 		Client clark = new Client("Clark","Kent",38,1);
 		Client bruce = new Client("Bruce","Wayne",38,2);
 		
-		// Instatiatinf accounts
+		// Instantiating accounts
 		SimpleAccount simpleAcount = new SimpleAccount();
 		PaymentAccount paymentAccount = new PaymentAccount();
 		
