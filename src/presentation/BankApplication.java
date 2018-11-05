@@ -1,7 +1,7 @@
 package presentation;
 import logic.Account;
 import logic.Client;
-import logic.LoanAccount;
+
 import logic.PaymentAccount;
 import logic.SimpleAccount;
 
