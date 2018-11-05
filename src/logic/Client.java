@@ -24,7 +24,7 @@ public class Client extends Person{
 
 	@Override
 	public String toString() {
-		return " Client [clientNumber=" + clientNumber + ", getName()=" + getName() + ", getSurname()=" + getSurname()
+		return "Client [clientNumber=" + clientNumber + ", getName()=" + getName() + ", getSurname()=" + getSurname()
 				+ ", getAge()=" + getAge() + "\n" + super.toString() + "]";
 	}
 

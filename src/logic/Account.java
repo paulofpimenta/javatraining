@@ -33,18 +33,24 @@ public class Account {
 
 	// Methods
 	public void addSolde(Double amount) {
-
-		this.solde -= amount;
+		solde += amount;
 	}
 	
-	public void withdrawal (Double d) {
+	public void withdrawal (Double amount) {
 		
-		
+		if (solde >= 0 ){
+			solde -= amount;
+		}
 	}
 	
-	public void transfer(Account a1, Account a2) {
-		
-		
+	public void transfer(Account targetAccount, Double montant) {
+		Double totalSolde = solde - montant;
+		if (totalSolde > 0) {
+			solde -= montant;
+			targetAccount.solde += montant;
+		} else {
+			System.out.println("Not enough sold (" + solde + ")" + " for a transfer of " + montant);
+		}
 	}
 
 	public Client getClient() {
@@ -53,11 +59,12 @@ public class Account {
 
 	public void setClient(Client client) {
 		this.client = client;
+		solde = 50.0;
 	}
 
 	@Override
 	public String toString() {
-		return "Account [code=" + code + ", solde=" + solde + ", \nclient=" + client + "]";
+		return "Account [code=" + code + ", solde=" + solde + "\n" + client + "]";
 	}
 	
 	

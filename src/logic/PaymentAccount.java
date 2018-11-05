@@ -5,7 +5,12 @@ public class PaymentAccount extends Account{
 	private Double percentage ;
 	
 	public PaymentAccount() {
-		// TODO Auto-generated constructor stub
+		
+	}
+
+	@Override
+	public String toString() {
+		return "PaymentAccount [percentage=" + percentage + ", toString()=" + super.toString() + "]";
 	}
 
 	public Double getPercentage() {
