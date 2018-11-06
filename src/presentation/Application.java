@@ -7,11 +7,7 @@ import logic.Employee;
 
 public class Application {
 	
-	/**
-	 * The application main class
-	 * @param args
-	 */
-	
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		

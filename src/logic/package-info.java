@@ -2,7 +2,7 @@
  * 
  */
 /**
- * @author ib
+ * @author Paulo
  *
  */
 package logic;

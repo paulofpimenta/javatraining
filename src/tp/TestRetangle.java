@@ -24,6 +24,8 @@ public class TestRetangle {
 		
 		
 		retangle.showDimensions();
+		System.exit(0);
+
 	}
 
 }

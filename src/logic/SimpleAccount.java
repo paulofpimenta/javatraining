@@ -1,13 +1,20 @@
 package logic;
-
+/**
+ * The simple account is a class that represents a common simple bank account 
+ * @author Paulo Pimenta
+ *
+ */
 public class SimpleAccount extends Account{
 	
 	private double decouvert;
+	private static int totalSimpleAccount;
 	
 	public SimpleAccount() {
-		
+		super();
 		this.setSolde(50.0);
 		this.setDecouvert(50.0);
+		totalSimpleAccount++;
+		
 	}
 
 	public double getDecouvert() {
@@ -23,6 +30,9 @@ public class SimpleAccount extends Account{
 		return "\nSimpleAccount [decouvert=" + decouvert + ", \n" + super.toString() + "]";
 	}
 	
+	/**
+	 * @param amount The amount
+	 */
 	@Override
 	public void withdrawal (Double amount) {
 		Double soldeSimpleAccount = solde - amount + decouvert;
@@ -44,5 +54,14 @@ public class SimpleAccount extends Account{
 			System.out.println("\nCannot make a deposit with a negative amount");
 		}
 	}
+	
+	public static int getTotalSimpleAccount() {
+		return totalSimpleAccount;
+	}
+
+	public static void setTotalSimpleAccount(int totalSimpleAccount) {
+		SimpleAccount.totalSimpleAccount = totalSimpleAccount;
+	}
+
 	
 }

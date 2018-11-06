@@ -1,12 +1,14 @@
 package logic;
 
-public class TransationAccount extends Account{
+public class TransactionAccount extends Account{
 
 	private double percentage;
+	private static int totalTransactionAccount;
 	
-	public TransationAccount() {
+	public TransactionAccount() {
 		this.setSolde(200.0);
 		this.setPercentage(0.10);
+		totalTransactionAccount++;
 	}
 
 	@Override
@@ -53,6 +55,14 @@ public class TransationAccount extends Account{
 		} else {
 			System.out.println("\nCannot make a deposit with a negative amount");
 		}
+	}
+	
+	public static int getTotalTransactionAccount() {
+		return totalTransactionAccount;
+	}
+
+	public static void setTotalTransactionAccount(int totalTransactionAccount) {
+		TransactionAccount.totalTransactionAccount = totalTransactionAccount;
 	}
 
 }

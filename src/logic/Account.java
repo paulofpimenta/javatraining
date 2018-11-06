@@ -4,12 +4,13 @@ public class Account {
 	
 	
 	private Integer code;
+	protected static int totalAccounts;
 	protected Double solde;
 	protected Client client;
 	
 	//Constructors
 	public Account() {
-		
+		totalAccounts ++;
 	}
 	
 	// Getters and setters
@@ -28,6 +29,14 @@ public class Account {
 
 	public void setSolde(Double solde) {
 		this.solde = solde;
+	}
+	
+	public static int getTotalAccounts() {
+		return totalAccounts;
+	}
+
+	public static void setTotalAccounts(Integer totalAccounts) {
+		Account.totalAccounts = totalAccounts;
 	}
 
 
@@ -80,6 +89,8 @@ public class Account {
 		
 		System.out.println(" \nMr(s) " + this.getClient().getSurname() + "'s sold is " + this.getSolde());  
 	}
+
+
 	
 	
 }
