@@ -2,18 +2,24 @@ package logic;
 
 public class LoanAccount extends Account {
 
-	private Double interestRate;
+	private Double interestRateTax;
 	
 	public LoanAccount() {
 		// TODO Auto-generated constructor stub
 	}
 
 	public Double getInterestRate() {
-		return interestRate;
+		return interestRateTax;
 	}
 
 	public void setInterestRate(Double interestRate) {
-		this.interestRate = interestRate;
+		this.interestRateTax = interestRate;
 	}
+	
+	public Double calculateInterestRate(Double d) {
+		return d;
+	}
+	
+	
 
 }

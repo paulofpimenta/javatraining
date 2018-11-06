@@ -56,6 +56,12 @@ public class Account {
 			System.out.println("\nNot enough sold (" + solde + ")" + " for a transfer of " + montant);
 		}
 	}
+	
+	public void deposit(Double amount) {
+		
+		this.setSolde(solde+=amount);
+
+	}
 
 	public Client getClient() {
 		return client;
@@ -72,7 +78,7 @@ public class Account {
 	
 	public void showSold() {
 		
-		System.out.println(" \nMr(s) " + this.getClient().getName() + "'s sold  is " + this.getSolde());  
+		System.out.println(" \nMr(s) " + this.getClient().getSurname() + "'s sold is " + this.getSolde());  
 	}
 	
 	
