@@ -1,13 +1,13 @@
 package logic;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Client extends Person{
 	
 	private Integer clientNumber;
-	protected static ArrayList<Client> clients = new ArrayList<Client>();
+	protected static List<Client> clients;
 	protected static int totalClients;
+	
 	
 	public Client() {
 		totalClients++;
@@ -17,7 +17,7 @@ public class Client extends Person{
 		super(name, surname, age);
 		this.clientNumber = clientNumber;
 		totalClients++;
-		//clients.add(new Client(name, surname, age,clientNumber));
+
 		//System.out.println(clients);
 	}
 
@@ -45,13 +45,20 @@ public class Client extends Person{
 				+ ", getAge()=" + getAge() + "\n" + super.toString() + "]";
 	}
 	
-	
+	public static void addClient(Client client) {
+		
+		clients.add(client);
+	}
 	
 	public static void clientsView() {
-		for (Client aClient : clients) {
-			System.out.println("Here" + aClient.getSurname());
-		    System.out.println(aClient.clientNumber);
-		}
+		//Client t  = new Client("Paulo", "pimenta", 32, 12);
+		//clients.add(t);
+		//System.out.println("test");
+		//System.out.println(clients.size());
+		//for (Client aClient : clients) {
+		//	System.out.println("wow");
+		    //System.out.println(aClient.clientNumber);
+		//}
 		
 	} 
 

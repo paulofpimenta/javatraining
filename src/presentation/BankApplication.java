@@ -54,7 +54,7 @@ public class BankApplication {
 						Client c = new Client(inputClientName, inputClientSurname, inputClientCode, inputClientAge);
 						break;
 					case 2:
-						Client.clientsView();
+						Client.getTotalClients();
 						//System.out.println("\nTotal number of clients : " + Client.clientsView() + "\n");
 						break;
 						
@@ -134,6 +134,8 @@ public class BankApplication {
 		"\n" + SimpleAccount.getTotalSimpleAccount() + " is a simple type account" + 
 		"\n" + TransactionAccount.getTotalTransactionAccount() + " is a transaction type account" +
 		"\n" + LoanAccount.getTotalLoanAccount() + " is a loan type account" );
+		
+		// coucou
 	}
 	
 }
