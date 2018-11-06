@@ -12,6 +12,26 @@ public class BankApplication {
 
 	public static void main(String[] args)  {
 				
+		
+		// Instantiating clients
+		Client clark = new Client("Clark","Kent",38,1);
+		Client bruce = new Client("Bruce","Wayne",38,2);
+		Client hal = new Client("Hal","Jordan",37,3);
+		
+		// Instantiating accounts
+		SimpleAccount clarkAccount = new SimpleAccount();
+		TransactionAccount bruceAccount = new TransactionAccount();
+		LoanAccount halAccount = new LoanAccount();
+
+		
+		// Setting client accounts
+		clarkAccount.setClient(clark);
+		bruceAccount.setClient(bruce);
+		halAccount.setClient(hal);
+		
+		
+		// Menu 
+		
 		// Create a menu
 		Scanner keyboard = new Scanner(System.in);
 		int choiceLv1 = 100;
@@ -34,11 +54,11 @@ public class BankApplication {
 			case 0:
 				break;
 				
-			// Create a single account
+			// MAIN MENU - CREATE A SIMPLE ACCOUNT (OPTION 1)
 			case 1: 
 				while (choiceLv2 != 0) {
 					System.out.println("MENU CREATE AN SINGLE ACCOUNT - TYPE 0 TO RETURN TO THE PREVIOUS MENU");
-					System.out.println("TYPE 1 TO CREATE A CLIENT FIRST");
+					System.out.println("TYPE 1 TO CREATE A CLIENT");
 					System.out.println("TYPE 2 TO VIEW A LIST OF CLIENTS");
 					choiceLv2 = keyboard.nextInt();
 					switch (choiceLv2) {
@@ -51,10 +71,12 @@ public class BankApplication {
 						int inputClientCode = keyboard.nextInt();
 						System.out.println("What is the age of client");
 						int inputClientAge = keyboard.nextInt();
-						Client c = new Client(inputClientName, inputClientSurname, inputClientCode, inputClientAge);
+						//System.out.println(inputClientName + inputClientSurname + inputClientCode + inputClientAge);
+						Client client = new Client(inputClientName, inputClientSurname,inputClientAge, inputClientCode);
+
 						break;
 					case 2:
-						Client.getTotalClients();
+						Client.clientsView();
 						//System.out.println("\nTotal number of clients : " + Client.clientsView() + "\n");
 						break;
 						
@@ -62,17 +84,36 @@ public class BankApplication {
 						break;
 					}
 				}
-					SimpleAccount s = new SimpleAccount();
-					break;
-			case 4:
-					System.out.println("MENU CREATE AN SINGLE ACCOUNT - TYPE 0 TO RETURN TO THE PREVIOUS MENU");
+			
+			// MAIN MENU - CREATE A TRANSACTION ACCOUNT (OPTION 2)
+			case 2:
 				
+				break;
+
+			// MAIN MENU - CREATE A LOAN ACCOUNT (OPTION 3)
+			case 3:
+				
+				break;
+			
+			// MAIN MENU - CREATE A CLIENT (OPTION 4)	
+			case 4:
+				
+				break;
+			
+			// MAIN MENU - VIEW ACCOUNTS REPORT (OPTION 5)
 			case 5: 
 					System.out.println("Total number of accounts: " + Account.getTotalAccounts() + ", which: " + 
 						"\n" + SimpleAccount.getTotalSimpleAccount() + " is a simple type account" + 
 						"\n" + TransactionAccount.getTotalTransactionAccount() + " is a transaction type account" +
 						"\n" + LoanAccount.getTotalLoanAccount() + " is a loan type account" );
+					break;
+			
+			// MAIN MENU - VIEW CLIENT LIST (OPTION 6)
+			case 6:
+				Client.clientsView();
 				break;
+			
+			// MAIN MENU - DEFAULT OPTION
 			default:
 				break;
 			}
@@ -80,32 +121,10 @@ public class BankApplication {
 		}
 		
 		
-		
-		
-		
-		
-		
-		// Instantiating clients
-		Client clark = new Client("Clark","Kent",38,1);
-		Client bruce = new Client("Bruce","Wayne",38,2);
-		Client jordan = new Client("Jordan","Hal",37,3);
-		
-		// Instantiating accounts
-		SimpleAccount clarkAccount = new SimpleAccount();
-		TransactionAccount bruceAccount = new TransactionAccount();
-		LoanAccount jordanAccount = new LoanAccount();
-
-		
-		// Setting client accounts
-		clarkAccount.setClient(clark);
-		bruceAccount.setClient(bruce);
-		jordanAccount.setClient(jordan);
-
-		
 		// Show sold on both accounts
 		clarkAccount.showSold(); 
 		bruceAccount.showSold();  
-		jordanAccount.showSold();
+		halAccount.showSold();
 		
 		// Adding a deposit to clark's and bruce's account
 		clarkAccount.deposit(200.00);
@@ -134,8 +153,7 @@ public class BankApplication {
 		"\n" + SimpleAccount.getTotalSimpleAccount() + " is a simple type account" + 
 		"\n" + TransactionAccount.getTotalTransactionAccount() + " is a transaction type account" +
 		"\n" + LoanAccount.getTotalLoanAccount() + " is a loan type account" );
-		
-		// coucou
+
 	}
 	
 }

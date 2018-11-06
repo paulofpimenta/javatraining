@@ -1,11 +1,11 @@
 package logic;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class Client extends Person{
 	
 	private Integer clientNumber;
-	protected static List<Client> clients;
+	protected static ArrayList<Client> clients = new ArrayList<>();
 	protected static int totalClients;
 	
 	
@@ -17,8 +17,8 @@ public class Client extends Person{
 		super(name, surname, age);
 		this.clientNumber = clientNumber;
 		totalClients++;
+		clients.add(this);
 
-		//System.out.println(clients);
 	}
 
 	public static int getTotalClients() {
@@ -34,7 +34,6 @@ public class Client extends Person{
 	}
 
 
-
 	public void setClientNumber(Integer clientNumber) {
 		this.clientNumber = clientNumber;
 	}
@@ -44,17 +43,17 @@ public class Client extends Person{
 		return "Client [clientNumber=" + clientNumber + ", getName()=" + getName() + ", getSurname()=" + getSurname()
 				+ ", getAge()=" + getAge() + "\n" + super.toString() + "]";
 	}
-	
-	public static void addClient(Client client) {
-		
-		clients.add(client);
-	}
+
 	
 	public static void clientsView() {
-		//Client t  = new Client("Paulo", "pimenta", 32, 12);
-		//clients.add(t);
-		//System.out.println("test");
-		//System.out.println(clients.size());
+		System.out.println("|=========|=========|=========|========|");
+		System.out.println("|--CODE---|--NAME---|-SURNAME-|---AGE--|");
+		System.out.println("|=========|=========|=========|========|");
+		clients.forEach(client-> System.out.println("    " + client.getClientNumber() +
+													"       " + client.getName() + 
+													"     " + client.getSurname() + 
+													"    " + client.getAge() + 
+													"\n|--------------------------------------|"));
 		//for (Client aClient : clients) {
 		//	System.out.println("wow");
 		    //System.out.println(aClient.clientNumber);
