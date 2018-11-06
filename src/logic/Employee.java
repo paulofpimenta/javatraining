@@ -10,7 +10,6 @@ public class Employee extends Person{
 	}
 	
 
-
 	public Employee(String name, String surname, Integer age, Double salary) {
 		super(name, surname, age);
 		this.salary = salary;
@@ -29,7 +28,6 @@ public class Employee extends Person{
 	public String toString() {
 		return "Employee [salary=" + salary + ", toString()=" + super.toString() + "]";
 	}
-
 	
 	
 

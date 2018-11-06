@@ -4,8 +4,8 @@ public class Account {
 	
 	
 	private Integer code;
-	private Double solde;
-	private Client client;
+	protected Double solde;
+	protected Client client;
 	
 	//Constructors
 	public Account() {
@@ -40,6 +40,10 @@ public class Account {
 		
 		if (solde >= 0 ){
 			solde -= amount;
+			System.out.println("Mr(s) " + this.client.getSurname() + " has withdrawn " + amount);
+			System.out.println("Mr(s) " + this.client.getSurname() + " sold is now " + this.solde);
+		} else {
+			System.out.println("Not enough sold (" + solde + ")" + " for a withdrawn of " + amount);
 		}
 	}
 	
@@ -49,7 +53,7 @@ public class Account {
 			solde -= montant;
 			targetAccount.solde += montant;
 		} else {
-			System.out.println("Not enough sold (" + solde + ")" + " for a transfer of " + montant);
+			System.out.println("\nNot enough sold (" + solde + ")" + " for a transfer of " + montant);
 		}
 	}
 
@@ -59,7 +63,6 @@ public class Account {
 
 	public void setClient(Client client) {
 		this.client = client;
-		solde = 50.0;
 	}
 
 	@Override
@@ -67,7 +70,10 @@ public class Account {
 		return "Account [code=" + code + ", solde=" + solde + "\n" + client + "]";
 	}
 	
-	
+	public void showSold() {
+		
+		System.out.println(" \nMr(s) " + this.getClient().getName() + "'s sold  is " + this.getSolde());  
+	}
 	
 	
 }
