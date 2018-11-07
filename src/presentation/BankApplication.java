@@ -23,7 +23,7 @@ public class BankApplication {
 		SimpleAccount clarkAccount = new SimpleAccount();
 		TransactionAccount bruceAccount = new TransactionAccount();
 		LoanAccount halAccount = new LoanAccount();
-
+		
 		
 		// Setting client accounts
 		clarkAccount.setClient(clark);
@@ -111,6 +111,10 @@ public class BankApplication {
 					case 1:
 						System.out.println("1 - WITHDRAW");
 						System.out.println("What is the client's code ?");
+						int inputClientCode = keyboard.nextInt();
+						System.out.println("What is the amount ?");
+						int inputAmount = keyboard.nextInt();
+						
 						break;
 					case 2:
 						System.out.println("2 - TRANSFER");
@@ -174,10 +178,10 @@ public class BankApplication {
 		clarkAccount.withdrawal(50.0);
 		
 		// Show total number of accounts()
-		//System.out.println("Total number of accounts: " + Account.getTotalAccounts() + ", which: " + 
-		//"\n" + SimpleAccount.getTotalSimpleAccount() + " is a simple type account" + 
-		//"\n" + TransactionAccount.getTotalTransactionAccount() + " is a transaction type account" +
-		//"\n" + LoanAccount.getTotalLoanAccount() + " is a loan type account" );
+		System.out.println("Total number of accounts: " + Account.getTotalAccounts() + ", which: " + 
+		"\n" + SimpleAccount.getTotalSimpleAccount() + " is a simple type account" + 
+		"\n" + TransactionAccount.getTotalTransactionAccount() + " is a transaction type account" +
+		"\n" + LoanAccount.getTotalLoanAccount() + " is a loan type account" );
 
 	}
 	

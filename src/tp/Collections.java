@@ -34,13 +34,14 @@ public class Collections {
 		Person p2 = new Person("Blue","Demon",34);
 		Person p3 = new Person("El","Santo",30);
 		Person p4 = new Person("Mil","Mascaras",44);
-		Person p5 = new Person("Mil","Mascaras",44);
+		Person p5 = new Person("Roberto","Bolanos",44);
 		
 		personHashSet.add(p1);	
 		personHashSet.add(p2);
 		personHashSet.add(p3);
 		personHashSet.add(p4);
 		personHashSet.add(p5);
+		// Ignore repeated
 		personHashSet.add(p5);
 		
 		personHashMap.put("Good",p1);
@@ -58,7 +59,7 @@ public class Collections {
 		//personHashSet.add(new Person("Mil","Mascaras",44));
 		
 		for(Person person: personHashSet) {
-			System.out.println("\n"+person);
+			System.out.println(person);
 		}
 		
 		for(String rate: personHashMap.keySet()) {

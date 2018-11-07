@@ -1,12 +1,17 @@
 package logic;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import logic.Entreprise;
 public class Person {
 	
 	private String name;
 	private String surname;
 	private Integer age;
 	
-	//Constructors	
+	private List<Entreprise> entrepises = new ArrayList<Entreprise>();
+	
 	public Person(String name, String surname, Integer age){
 
 		this.name = name;

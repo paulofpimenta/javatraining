@@ -1,11 +1,17 @@
 package logic;
 
 import java.util.ArrayList;
+import java.util.List;
+
+
 
 public class Client extends Person{
 	
 	private Integer clientNumber;
-	protected static ArrayList<Client> clients = new ArrayList<>();
+	protected Account account;
+
+
+	protected Agency agency;
 	protected static int totalClients;
 	
 	
@@ -17,7 +23,6 @@ public class Client extends Person{
 		super(name, surname, age);
 		this.clientNumber = clientNumber;
 		totalClients++;
-		clients.add(this);
 
 	}
 
@@ -44,21 +49,12 @@ public class Client extends Person{
 				+ ", getAge()=" + getAge() + "\n" + super.toString() + "]";
 	}
 
-	
-	public static void clientsView() {
-		System.out.println("|=========|=========|=========|========|");
-		System.out.println("|--CODE---|--NAME---|-SURNAME-|---AGE--|");
-		System.out.println("|=========|=========|=========|========|");
-		clients.forEach(client-> System.out.println("    " + client.getClientNumber() +
-													"       " + client.getName() + 
-													"     " + client.getSurname() + 
-													"    " + client.getAge() + 
-													"\n|--------------------------------------|"));
-		//for (Client aClient : clients) {
-		//	System.out.println("wow");
-		    //System.out.println(aClient.clientNumber);
-		//}
-		
+	public Account getAccount() {
+		return account;
+	}
+
+	public void setAccount(Account account) {
+		this.account = account;
 	} 
 
 }
