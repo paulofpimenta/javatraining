@@ -6,6 +6,14 @@ public class Client extends Person{
 	protected Account account;
 
 
+	public Agency getAgency() {
+		return agency;
+	}
+
+	public void setAgency(Agency agency) {
+		this.agency = agency;
+	}
+
 	protected Agency agency;
 	protected static int totalClients;
 	
@@ -18,7 +26,7 @@ public class Client extends Person{
 		super(name, surname, age);
 		this.clientNumber = clientNumber;
 		totalClients++;
-
+		
 	}
 
 	public static int getTotalClients() {
@@ -41,15 +49,18 @@ public class Client extends Person{
 	@Override
 	public String toString() {
 		return "Client [clientNumber=" + clientNumber + ", getName()=" + getName() + ", getSurname()=" + getSurname()
-				+ ", getAge()=" + getAge() + "\n" + super.toString() + "]";
+				+ ", getAge()=" + getAge() + ", getAcccount()=" + getAccount() + "\n" + super.toString() + "]";
 	}
 
 	public Account getAccount() {
+		//System.out.println("o get ------------ " + account + "----");
 		return account;
 	}
 
 	public void setAccount(Account account) {
+		//System.out.println("Deu set ------------ " + account + "----");
 		this.account = account;
+
 	} 
 
 }

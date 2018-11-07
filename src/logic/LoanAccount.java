@@ -6,7 +6,7 @@ public class LoanAccount extends Account {
 	private static int totalLoanAccount;
 	
 	public LoanAccount() {
-		// TODO Auto-generated constructor stub
+		this.setAccountType("Loan");
 		totalLoanAccount++;
 	}
 

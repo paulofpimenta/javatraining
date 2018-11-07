@@ -6,6 +6,7 @@ public class TransactionAccount extends Account{
 	private static int totalTransactionAccount;
 	
 	public TransactionAccount() {
+		this.setAccountType("Transaction");
 		this.setSolde(200.0);
 		this.setPercentage(0.10);
 		totalTransactionAccount++;

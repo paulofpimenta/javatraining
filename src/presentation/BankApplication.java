@@ -8,6 +8,7 @@ import logic.Client;
 import logic.SimpleAccount;
 import logic.TransactionAccount;
 import logic.LoanAccount;
+import logic.Agency;
 
 public class BankApplication {
 
@@ -39,15 +40,15 @@ public class BankApplication {
 		while(choiceLv1 != 0 ) {
 			
 			System.out.println("\n\n###############################################################");
-			System.out.println("########///////******SELECT AN OPTION\\\\\\*******################");
-			System.out.println("TYPE 1 TO CREATE AN SINGLE ACCOUNT");
-			System.out.println("TYPE 2 TO CREATE A TRANSACTION ACCOUNT");
-			System.out.println("TYPE 3 TO CREATE AN LOAN ACCOUNT");
-			System.out.println("TYPE 4 TO PERFORM AN ACCOUNT OPERATION");
-			System.out.println("TYPE 5 TO SHOW A LIST OF ACCOUNTS");
-			System.out.println("TYPE 6 TO SHOW A LIST OF CLIENTS");
-			System.out.println("TYPE 0 TO QUIT");
-			System.out.println("########///////******|||||||||||\\\\\\\\\\\\*******#################");
+			System.out.println("########///////******SELECT AN OPTION\\\\\\*******################\n");
+			System.out.println("1 - CREATE AN SIMPLE ACCOUNT");
+			System.out.println("2 - CREATE A TRANSACTION ACCOUNT");
+			System.out.println("3 - CREATE AN LOAN ACCOUNT");
+			System.out.println("4 - PERFORM AN ACCOUNT OPERATION");
+			System.out.println("5 - SHOW THE LIST OF ACCOUNTS");
+			System.out.println("6 - SHOW THE LIST OF CLIENTS");
+			System.out.println("0 - QUIT THE APPLICATION");
+			System.out.println("\n########///////******|||||||||||\\\\\\\\\\\\*******#################");
 			choiceLv1 = keyboard.nextInt();
 			switch (choiceLv1) {
 			case 0:
@@ -56,9 +57,10 @@ public class BankApplication {
 			// MAIN MENU - CREATE A SIMPLE ACCOUNT (OPTION 1)
 			case 1: 
 				while (choiceLv2 != 0) {
-					System.out.println("MENU CREATE AN SINGLE ACCOUNT - TYPE 0 TO RETURN TO THE PREVIOUS MENU");
-					System.out.println("TYPE 1 TO CREATE A CLIENT");
-					System.out.println("TYPE 2 TO VIEW A LIST OF CLIENTS");
+					System.out.println("MENU CREATE AN SINGLE ACCOUNT");
+					System.out.println("1 - CREATE A CLIENT WITH A SIMPLE ACCOUNT");
+					System.out.println("2 - LIST CLIENTS WITH A SIMPLE ACCOUNT");
+					System.out.println("0 - PREVIOUS MENU");
 					choiceLv2 = keyboard.nextInt();
 					switch (choiceLv2) {
 					case 1:
@@ -72,10 +74,12 @@ public class BankApplication {
 						int inputClientAge = keyboard.nextInt();
 						
 						Client client = new Client(inputClientName, inputClientSurname,inputClientAge, inputClientCode);
-
+						SimpleAccount simpleAccount = new SimpleAccount();
+						simpleAccount.setClient(client);
+						
 						break;
 					case 2:
-						Client.clientsView();
+						Agency.clientsView("Simple");
 						//System.out.println("\nTotal number of clients : " + Client.clientsView() + "\n");
 						break;
 						
@@ -84,9 +88,40 @@ public class BankApplication {
 					}
 				}
 				break;
+				
 			// MAIN MENU - CREATE A TRANSACTION ACCOUNT (OPTION 2)
 			case 2:
-				
+				while (choiceLv2 != 0) {
+					System.out.println("MENU CREATE AN TRANSACTION ACCOUNT");
+					System.out.println("1 - CREATE A CLIENT WITH A TRANSACTION ACCOUNT");
+					System.out.println("2 - LIST CLIENTS WITH A TRANSACTION ACCOUNT");
+					System.out.println("0 - PREVIOUS MENU");
+					choiceLv2 = keyboard.nextInt();
+					switch (choiceLv2) {
+					case 1:
+						System.out.println("What is the name of client");
+						String inputClientName = keyboard.next();
+						System.out.println("What is the surname of client");
+						String inputClientSurname = keyboard.next();
+						System.out.println("What is the code of client");
+						int inputClientCode = keyboard.nextInt();
+						System.out.println("What is the age of client");
+						int inputClientAge = keyboard.nextInt();
+						
+						Client client = new Client(inputClientName, inputClientSurname,inputClientAge, inputClientCode);
+						TransactionAccount transactionAccount = new TransactionAccount();
+						transactionAccount.setClient(client);
+						
+						break;
+					case 2:
+						Agency.clientsView("Transaction");
+						//System.out.println("\nTotal number of clients : " + Client.clientsView() + "\n");
+						break;
+						
+					default:
+						break;
+					}
+				}
 				break;
 
 			// MAIN MENU - CREATE A LOAN ACCOUNT (OPTION 3)
@@ -139,7 +174,7 @@ public class BankApplication {
 			
 			// MAIN MENU - VIEW CLIENT LIST (OPTION 6)
 			case 6:
-				//Account.
+				Agency.clientsView("");
 				break;
 			
 			// MAIN MENU - DEFAULT OPTION
@@ -148,10 +183,11 @@ public class BankApplication {
 			}
 			
 		}
+		keyboard.close();
 		
 		
 		// Show sold on both accounts
-		clarkAccount.showSold(); 
+		clarkAccount.showSold();
 		bruceAccount.showSold();  
 		halAccount.showSold();
 		

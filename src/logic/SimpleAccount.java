@@ -9,8 +9,10 @@ public class SimpleAccount extends Account{
 	private double decouvert;
 	private static int totalSimpleAccount;
 	
+	
 	public SimpleAccount() {
 		super();
+		this.setAccountType("Simple");
 		this.setSolde(50.0);
 		this.setDecouvert(50.0);
 		totalSimpleAccount++;
@@ -27,7 +29,7 @@ public class SimpleAccount extends Account{
 
 	@Override
 	public String toString() {
-		return "\nSimpleAccount [decouvert=" + decouvert + ", \n" + super.toString() + "]";
+		return "\nSimpleAccount [decouvert=" + decouvert + ", " + super.toString() + "]";
 	}
 	
 	/**
@@ -35,13 +37,13 @@ public class SimpleAccount extends Account{
 	 */
 	@Override
 	public void withdrawal (Double amount) {
-		Double soldeSimpleAccount = solde - amount + decouvert;
+		Double soldeSimpleAccount = this.solde - amount + this.decouvert;
 		if (soldeSimpleAccount >= 0 && amount > 0) {
-			solde -= amount;
+			this.solde -= amount;
 			System.out.println("\nMr(s) " + this.client.getSurname() + " has withdrawn " + amount);
 			System.out.println("Mr(s) " + this.client.getSurname() + " sold is now " + this.solde);
 		} else {
-			System.out.println("\nNot enough sold (" + solde + ")" + " for a withdrawn of " + amount);
+			System.out.println("\nNot enough sold (" + this.solde  + " ) for a withdrawn of " + amount);
 		}
 	}
 	@Override

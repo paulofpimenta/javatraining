@@ -3,10 +3,12 @@ package logic;
 public class Account {
 	
 	
-	private Integer code;
+	protected Integer code;
 	protected static int totalAccounts;
 	protected Double solde;
+	protected Agency agency;
 	protected Client client;
+	protected String accountType = "Account"; 
 	
 	//Constructors
 	public Account() {
@@ -14,7 +16,33 @@ public class Account {
 	}
 	
 	// Getters and setters
+	public String getAccountType() {
+		return accountType;
+	}
 	
+	public void setAccountType(String accountType) {
+		this.accountType = accountType;
+	}
+	
+	public Client getClient() {
+		return client;
+	}
+
+	public void setClient(Client client) {
+		//Add the client to the Agency list of clients
+		Agency.clients.add(client);
+		this.client = client;
+		// Set the client account to the current account object type
+		this.client.setAccount(this);
+	}
+	public Agency getAgency() {
+		return agency;
+	}
+
+	public void setAgency(Agency agency) {
+		this.agency = agency;
+	}
+
 	public Integer getCode() {
 		return code;
 	}
@@ -72,38 +100,17 @@ public class Account {
 
 	}
 
-	public Client getClient() {
-		return client;
-	}
-
-	public void setClient(Client client) {
-		this.client = client;
-	}
 
 	@Override
 	public String toString() {
-		return "Account [code=" + code + ", solde=" + solde + "\n" + client + "]";
+		return "Account [code=" + code + ", solde=" + solde + ", agency=" + agency + ", accountType=" + accountType + "]";
 	}
 	
 	public void showSold() {
-		
-		System.out.println(" \nMr(s) " + this.getClient().getSurname() + "'s sold is " + this.getSolde());  
+		//System.out.println("tetetet " + this.getClient().getAccount());
+		System.out.println(" \nMr(s) " + this.getClient().getSurname() + "'s sold is " + this.getClient().account.getSolde());  
 	}
 
-	public static void clientsView() {
-	//Client t  = new Client("Paulo", "pimenta", 32, 12);
-	//clients.add(t);
-	//System.out.println("test");
-	//System.out.println(clients.size());
-	System.out.println("|=========|=========|=========|========|");
-	System.out.println("|--CODE---|--NAME---|-SURNAME-|---AGE--|");
-	System.out.println("|=========|=========|=========|========|");
-	//clients.forEach(client-> System.out.println("    " + client.getClientNumber() +
-	//											"       " + client.getName() + 
-	//											"     " + client.getSurname() + 
-	//											"    " + client.getAge() + 
-	//											"\n|--------------------------------------|"));
-	
-}
+
 	}
 
