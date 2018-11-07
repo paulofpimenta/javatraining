@@ -90,7 +90,20 @@ public class Account {
 		System.out.println(" \nMr(s) " + this.getClient().getSurname() + "'s sold is " + this.getSolde());  
 	}
 
-
-	
+	public static void clientsView() {
+	//Client t  = new Client("Paulo", "pimenta", 32, 12);
+	//clients.add(t);
+	//System.out.println("test");
+	//System.out.println(clients.size());
+	System.out.println("|=========|=========|=========|========|");
+	System.out.println("|--CODE---|--NAME---|-SURNAME-|---AGE--|");
+	System.out.println("|=========|=========|=========|========|");
+	//clients.forEach(client-> System.out.println("    " + client.getClientNumber() +
+	//											"       " + client.getName() + 
+	//											"     " + client.getSurname() + 
+	//											"    " + client.getAge() + 
+	//											"\n|--------------------------------------|"));
 	
 }
+	}
+

@@ -1,10 +1,5 @@
 package logic;
 
-import java.util.ArrayList;
-import java.util.List;
-
-
-
 public class Client extends Person{
 	
 	private Integer clientNumber;

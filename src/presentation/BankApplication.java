@@ -30,7 +30,7 @@ public class BankApplication {
 		bruceAccount.setClient(bruce);
 		halAccount.setClient(hal);
 		
-		/*
+		
 		// Menu 
 		Scanner keyboard = new Scanner(System.in);
 		int choiceLv1 = 100;
@@ -139,7 +139,7 @@ public class BankApplication {
 			
 			// MAIN MENU - VIEW CLIENT LIST (OPTION 6)
 			case 6:
-				Client.clientsView();
+				//Account.
 				break;
 			
 			// MAIN MENU - DEFAULT OPTION
@@ -148,7 +148,7 @@ public class BankApplication {
 			}
 			
 		}
-		*/
+		
 		
 		// Show sold on both accounts
 		clarkAccount.showSold(); 
