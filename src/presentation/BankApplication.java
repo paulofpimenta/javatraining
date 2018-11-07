@@ -2,6 +2,7 @@ package presentation;
 
 import java.util.Scanner;
 
+
 import logic.Account;
 import logic.Client;
 import logic.SimpleAccount;
@@ -29,10 +30,8 @@ public class BankApplication {
 		bruceAccount.setClient(bruce);
 		halAccount.setClient(hal);
 		
-		
+		/*
 		// Menu 
-		
-		// Create a menu
 		Scanner keyboard = new Scanner(System.in);
 		int choiceLv1 = 100;
 		int choiceLv2 = 200;
@@ -44,7 +43,7 @@ public class BankApplication {
 			System.out.println("TYPE 1 TO CREATE AN SINGLE ACCOUNT");
 			System.out.println("TYPE 2 TO CREATE A TRANSACTION ACCOUNT");
 			System.out.println("TYPE 3 TO CREATE AN LOAN ACCOUNT");
-			System.out.println("TYPE 4 TO CREATE AN CLIENT");
+			System.out.println("TYPE 4 TO PERFORM AN ACCOUNT OPERATION");
 			System.out.println("TYPE 5 TO SHOW A LIST OF ACCOUNTS");
 			System.out.println("TYPE 6 TO SHOW A LIST OF CLIENTS");
 			System.out.println("TYPE 0 TO QUIT");
@@ -63,7 +62,7 @@ public class BankApplication {
 					choiceLv2 = keyboard.nextInt();
 					switch (choiceLv2) {
 					case 1:
-						System.out.println("What is th name of client");
+						System.out.println("What is the name of client");
 						String inputClientName = keyboard.next();
 						System.out.println("What is the surname of client");
 						String inputClientSurname = keyboard.next();
@@ -71,7 +70,7 @@ public class BankApplication {
 						int inputClientCode = keyboard.nextInt();
 						System.out.println("What is the age of client");
 						int inputClientAge = keyboard.nextInt();
-						//System.out.println(inputClientName + inputClientSurname + inputClientCode + inputClientAge);
+						
 						Client client = new Client(inputClientName, inputClientSurname,inputClientAge, inputClientCode);
 
 						break;
@@ -84,7 +83,7 @@ public class BankApplication {
 						break;
 					}
 				}
-			
+				break;
 			// MAIN MENU - CREATE A TRANSACTION ACCOUNT (OPTION 2)
 			case 2:
 				
@@ -95,14 +94,40 @@ public class BankApplication {
 				
 				break;
 			
-			// MAIN MENU - CREATE A CLIENT (OPTION 4)	
+			// MAIN MENU -  SELECT AN OPERATION (OPTION 4)	
 			case 4:
+				System.out.println("PLEASE SELECT AN OPERATION");
+				System.out.println("===========================");
+				System.out.println("1 - WITHDRAW");
+				System.out.println("2 - TRANSFER");
+				System.out.println("3 - DEPOSIT");
+				System.out.println("0 - RETURN TO PREVIOUS MENU");
+				System.out.println("===========================");
+				int choice4 = 400;
+				while (choice4 !=0) {
+					choice4 = keyboard.nextInt();
+					// SUB-MENU 4
+					switch (choice4) {
+					case 1:
+						System.out.println("1 - WITHDRAW");
+						System.out.println("What is the client's code ?");
+						break;
+					case 2:
+						System.out.println("2 - TRANSFER");
+						break;
+					case 3:
+						System.out.println("3 - DEPOSIT");
+						break;
+					default:
+						break;
+					}
+				}
 				
 				break;
-			
+				
 			// MAIN MENU - VIEW ACCOUNTS REPORT (OPTION 5)
 			case 5: 
-					System.out.println("Total number of accounts: " + Account.getTotalAccounts() + ", which: " + 
+					System.out.println("Total number of accountsss: " + Account.getTotalAccounts() + ", which: " + 
 						"\n" + SimpleAccount.getTotalSimpleAccount() + " is a simple type account" + 
 						"\n" + TransactionAccount.getTotalTransactionAccount() + " is a transaction type account" +
 						"\n" + LoanAccount.getTotalLoanAccount() + " is a loan type account" );
@@ -119,7 +144,7 @@ public class BankApplication {
 			}
 			
 		}
-		
+		*/
 		
 		// Show sold on both accounts
 		clarkAccount.showSold(); 
@@ -149,10 +174,10 @@ public class BankApplication {
 		clarkAccount.withdrawal(50.0);
 		
 		// Show total number of accounts()
-		System.out.println("Total number of accounts: " + Account.getTotalAccounts() + ", which: " + 
-		"\n" + SimpleAccount.getTotalSimpleAccount() + " is a simple type account" + 
-		"\n" + TransactionAccount.getTotalTransactionAccount() + " is a transaction type account" +
-		"\n" + LoanAccount.getTotalLoanAccount() + " is a loan type account" );
+		//System.out.println("Total number of accounts: " + Account.getTotalAccounts() + ", which: " + 
+		//"\n" + SimpleAccount.getTotalSimpleAccount() + " is a simple type account" + 
+		//"\n" + TransactionAccount.getTotalTransactionAccount() + " is a transaction type account" +
+		//"\n" + LoanAccount.getTotalLoanAccount() + " is a loan type account" );
 
 	}
 	
