@@ -1,7 +1,10 @@
 package presentation;
 
-import java.util.Scanner;
 
+import java.util.List;
+import java.util.Locale;
+import java.util.Scanner;
+import java.util.stream.Collectors;
 
 import logic.Account;
 import logic.Client;
@@ -34,6 +37,7 @@ public class BankApplication {
 		
 		// Menu 
 		Scanner keyboard = new Scanner(System.in);
+		keyboard.useLocale(Locale.US);
 		int choiceLv1 = 100;
 		int choiceLv2 = 200;
 		
@@ -148,7 +152,17 @@ public class BankApplication {
 						System.out.println("What is the client's code ?");
 						int inputClientCode = keyboard.nextInt();
 						System.out.println("What is the amount ?");
-						int inputAmount = keyboard.nextInt();
+						double inputAmount = keyboard.nextDouble();
+						System.out.println(inputAmount);
+						
+						List<Client> clients = Agency.getClients();
+						Client theClient = clients.stream()
+							    			    .filter(client-> client.getClientNumber() == inputClientCode)
+							    			    .findFirst()
+							    		        .orElse(null);
+						
+						theClient.getAccount().withdrawal(inputAmount);
+						theClient.getAccount().showSold();
 						
 						break;
 					case 2:

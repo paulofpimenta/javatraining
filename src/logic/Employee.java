@@ -1,9 +1,9 @@
 package logic;
 
-public class Employee extends Person{
+public abstract class Employee extends Person{
 	
 	private Double salary;
-	
+	private int matricule;
 
 	public Employee() {
 		
@@ -23,12 +23,19 @@ public class Employee extends Person{
 		this.salary = salary;
 	}
 	
-
+	
 	@Override
 	public String toString() {
 		return "Employee [salary=" + salary + ", toString()=" + super.toString() + "]";
 	}
 	
+	// Abstract methods
+	
+	public abstract float grossSalary();
+	
+	public abstract float vacationIndemities(); 
+	
+	public abstract int numberWorkedDays(); 
 	
 
 }
