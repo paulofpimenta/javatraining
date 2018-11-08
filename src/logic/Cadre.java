@@ -2,6 +2,7 @@ package logic;
 
 public class Cadre extends Employee{
 
+	
 	@Override
 	public float grossSalary() {
 		// TODO Auto-generated method stub

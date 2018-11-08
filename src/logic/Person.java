@@ -71,4 +71,12 @@ public class Person {
 		System.out.println("The person's name is " + this.name + " " + this.surname );
 		System.out.println(this.name + " is " + this.age + " old");
 	}
+
+	public List<Entreprise> getEntrepises() {
+		return entrepises;
+	}
+
+	public void setEntrepises(List<Entreprise> entrepises) {
+		this.entrepises = entrepises;
+	}
 }

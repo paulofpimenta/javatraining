@@ -5,10 +5,17 @@ public abstract class Employee extends Person{
 	private Double salary;
 	private int matricule;
 
+
 	public Employee() {
 		
 	}
 	
+
+	public Employee(String name, String surname, Integer age) {
+		super(name, surname, age);
+		// TODO Auto-generated constructor stub
+	}
+
 
 	public Employee(String name, String surname, Integer age, Double salary) {
 		super(name, surname, age);
@@ -33,9 +40,21 @@ public abstract class Employee extends Person{
 	
 	public abstract float grossSalary();
 	
-	public abstract float vacationIndemities(); 
-	
 	public abstract int numberWorkedDays(); 
 	
+	public float vacationIndemities() {
+		
+		return grossSalary() * numberWorkedDays() / 12;
+	}
+
+
+	public int getMatricule() {
+		return matricule;
+	}
+
+
+	public void setMatricule(int matricule) {
+		this.matricule = matricule;
+	} 
 
 }
